@@ -1,0 +1,559 @@
+/******** edit.html ********/
+a {
+    text-decoration: none;
+    color:black;
+}
+:root {
+    --bg-1: red;
+}
+
+
+@media screen and (min-width: 600px) {
+    #formulaire-pokemon form {
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        flex-direction: column;
+        /* background-color: black; */
+        border: 3px solid var(--bg-1);
+        border: 3px solid rgb(255, 0, 0);
+        border-radius: 2%;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 5%;
+        color: white;
+        background: url(images/Background_formulaire.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .ligne-formulaire {
+        margin: 1rem;
+        height: 2rem;
+        display: flex;
+        flex-wrap:wrap ;
+        justify-content: space-between;
+    }
+    
+    .ligne-formulaire label {
+        margin-left: 10%;
+    }
+    .question {
+        background-color: white;
+        border-radius: 4px;
+        margin-right: 10%;
+        width: 50%;
+    }
+    
+    .submit-reset {
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .submit-reset input  {
+        margin-right: 5%;
+    }
+    
+    .boite-bouttons {
+        background-color: #33a03a;
+        border-radius: 10px;
+        color:  white;
+        font-family: 'Poppins', sans-serif;
+        font-size: medium;
+        border: none;   
+    }
+    
+    .boite-bouttons:hover {
+        background-color: #5ac761;
+    }
+    
+    #lien-index {
+        background-color: rgb(218, 9, 9);
+        color: white;
+        font-size: medium;
+        font-family: 'Poppins', sans-serif;
+        padding-right: 5%;
+        padding-left: 5%;
+        padding-top: 2%;
+        border-radius: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #lien-index:hover {
+        background-color: rgb(236, 50, 50);
+    }
+    
+    #lien-index:hover::after {
+        content: "Attention, l'édition sera perdue !";
+        position: absolute;
+        top:90%;
+        transform: translateX(-30%);
+        background-color: #333;
+        padding: 5px;
+        border-radius: 5px;
+    }   
+}
+
+@media screen and (max-width: 600px) {
+    #formulaire-pokemon form {
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        border: 3px solid rgb(255, 0, 0);
+        border-radius: 2%;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 5%;
+        color: white;
+        background: url(images/Background_formulaire.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .ligne-formulaire {
+        margin: 1rem;
+        height: 2rem;
+        display: flex;
+        flex-wrap:wrap ;
+        justify-content: space-between;
+    }
+    
+    .ligne-formulaire label {
+        width: 100%;
+        text-align: center;
+    }
+    .question {
+        background-color: white;
+        border-radius: 4px;
+        width: 50%;
+        height: 1.5rem;
+        margin-left: 25%;
+    }
+    
+    .submit-reset {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .submit-reset input  {
+        margin-right: 5%;
+    }
+    
+    .boite-bouttons {
+        background-color: #33a03a;
+        border-radius: 10px;
+        color:  white;
+        font-family: 'Poppins', sans-serif;
+        font-size: medium;
+        border: none;   
+    }
+    
+    .boite-bouttons:hover {
+        background-color: #5ac761;
+    }
+    
+    #lien-index {
+        background-color: rgb(218, 9, 9);
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        font-size: medium;
+        padding-right: 5%;
+        padding-left: 5%;
+        padding-top: 2%;
+        border-radius: 10px;
+    }
+    
+    #lien-index:hover {
+        background-color: rgb(236, 50, 50);
+    }
+    
+    #lien-index:hover::after {
+        content: "Attention, l'édition sera perdue !";
+        position: absolute;
+        top:90%;
+        transform: translateX(-30%);
+        background-color: #333;
+        padding: 5px;
+        border-radius: 5px;
+    }   
+}
+
+
+
+/******** Pokemon.html ********/
+
+#pokemon-main {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background-color: #e99916;
+    margin: 5rem;
+    width: 250px;
+    height: 400px;
+    border: 0.5rem solid;
+    border-color: #ffc900;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    transition: transform 1s ease;
+}
+
+.card h1,
+p {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-top: -0.8rem;
+}
+
+.card img.background {
+    margin-left: 4%;
+    border: 0.2rem solid;
+    border-color: #eceded;
+    border-radius: 0.5rem;
+    background: url(images/background_try.png);
+    background-size: cover;
+}
+
+.card:hover {
+    transform: translate(-20px, -40px) rotate(-15deg) scale(1.4);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+.entete {
+    height: 7%;
+    display: flex;
+    flex-direction: row;
+    max-width: 0%;
+}
+
+.entete h1 {
+    padding-left: 0.8rem;
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        background-color: #e99916;
+        width: 250px;
+        height: 30%;
+        border: 0.5rem solid;
+        border-color: #ffc900;
+        border-radius: 1rem;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+        transition: transform 1s ease;
+    }
+
+    .entete {
+        height: 2rem;
+        display: flex;
+        flex-direction: row;
+        max-width: 0%;
+    }
+
+}
+
+#nom_carte {
+    margin-top: 1%;
+    margin-left: 5%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+}
+
+.informations-pokemon {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 6.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+#button-retour {
+    background-color: grey;
+    height: 3rem;
+    width: 6rem;
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 1.5rem;
+}
+
+.button-retour {
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+    color: white;
+    background-color: black;
+    border-radius: 2.5rem;
+    padding: 1rem 3rem;
+    position: fixed;
+    /*Voir pour ajouter une position fixed pour quand on bouge dans la page*/
+}
+
+.button-retour:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.button-pokemon {
+    top: 1rem;
+}
+
+/******** Index.html ********/
+/**** Liste de types ***/
+div.type-list {
+    list-style: none;
+    border-radius: 2em;
+    width: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 1rem;
+    margin-left: -2rem;
+    background-color: #413e41;
+}
+
+div.type-list li {
+    margin-bottom: 20%;
+}
+
+div.type-list a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    padding: 10%;
+    border-radius: 25%;
+}
+
+#color-normal:hover {
+    background-color: #A8A77A;
+    color: white;
+}
+
+#color-fire:hover {
+    background-color: #EE8130;
+    color: white;
+}
+
+#color-water:hover {
+    background-color: #6390F0;
+    color: white;
+}
+
+#color-electric:hover {
+    background-color: #F7D02C;
+    color: white;
+}
+
+#color-grass:hover {
+    background-color: #7AC74C;
+    color: white;
+}
+
+#color-ice:hover {
+    background-color: #96D9D6;
+    color: white;
+}
+
+#color-fighting:hover {
+    background-color: #C22E28;
+    color: white;
+}
+
+#color-poison:hover {
+    background-color: #A33EA1;
+    color: white;
+}
+
+#color-ground:hover {
+    background-color: #E2BF65;
+    color: white;
+}
+
+#color-flying:hover {
+    background-color: #A98FF3;
+    color: white;
+}
+
+#color-psychic:hover {
+    background-color: #F95587;
+    color: white;
+}
+
+#color-bug:hover {
+    background-color: #A6B91A;
+    color: white;
+}
+
+#color-rock:hover {
+    background-color: #B6A136;
+    color: white;
+}
+
+#color-ghost:hover {
+    background-color: #735797;
+    color: white;
+}
+
+#color-dragon:hover {
+    background-color: #6F35FC;
+    color: white;
+}
+
+#color-dark:hover {
+    background-color: #705746;
+    color: white;
+}
+
+#color-steel:hover {
+    background-color: #B7B7CE;
+    color: white;
+}
+
+#color-fairy:hover {
+    background-color: #D685AD;
+    color: white;
+}
+
+#color-stellar:hover {
+    background-color: #7CC7B2;
+    color: white;
+}
+
+#color-unknown:hover {
+    background-color: black;
+    color: white;
+}
+
+.button-index {
+    bottom: 1rem;
+}
+
+.pokemon-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-left: 2rem;
+    height: 20.2rem;
+    gap: 2rem;
+}
+
+.pokemon-list img {
+    padding: 1rem;
+    height: 10rem;
+    width: 10rem;
+    background: url(images/colorBg.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: transform .5s ease;
+
+    border-radius: 18px 18px 0px 0px;
+}
+
+.pokemon-list li {
+    position: relative; /* Add position relative to create a stacking context for pseudo-element */
+    text-align: center;
+    background-color: black;
+    border: 3px solid;
+    border-color: black;
+    margin-right: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    transition: transform .5s ease;
+    border-radius: 20px;
+}
+
+.pokemon-list li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 20px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Add a smooth transition */
+    z-index: 1; /* Place it above the card */
+}
+
+.pokemon-list li:hover::before {
+    opacity: 0.1; /* Show the white line on hover */
+}
+
+.pokemon-list li:hover {
+    transform: translate(-20px, -40px) rotate(-10deg) scale(1.2);
+}
+
+
+
+.pokemon-list li a {
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.infos-list-pokemon {
+    width: 100%;
+    height: 7.5rem;
+    background: linear-gradient(to right, #2980b9, #3498db); /* Gradient for a shiny effect */
+    border-radius: 0px 0px 18px 18px;
+}
+
+.infos-list-pokemon p {
+    margin-top: 1rem;
+}
+
+main.index {
+    display: flex;
+    margin-top: 2rem;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: red;
+    border-radius: 7px;
+    width: 15rem;
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 150%;
+}
+
+#logo_pokeball {
+    width: 20%;
+    height: 20%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    transition: transform 0.3s ease;
+}
+
+#logo_pokeball:hover {
+    animation: capturing 1s;
+}
+
+@keyframes capturing {
+    0% {
+        rotate: 0deg;
+    }
+
+    33% {
+        rotate: 30deg;
+    }
+
+    66% {
+        rotate: -30deg;
+    }
+}
+
+html {
+    background: linear-gradient(grey, lightgray, white);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+

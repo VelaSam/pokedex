@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body id="index">
+    <header>
+      <img src="images/Poke_Ball.png" alt="logo_pokeball" id="logo_pokeball" />
+      <h1>Index</h1>
+    </header>
+
+    <main class="index">
+      <ul>
+        <div class="type-list">
+          <li><a href="index.html?type=normal" id="color-normal">Normal</a></li>
+          <li>
+            <a href="index.html?type=fighting" id="color-fighting">Fighting</a>
+          </li>
+          <li><a href="index.html?type=flying" id="color-flying">Flying</a></li>
+          <li><a href="index.html?type=poison" id="color-poison">Poison</a></li>
+          <li><a href="index.html?type=ground" id="color-ground">Ground</a></li>
+          <li><a href="index.html?type=rock" id="color-rock">Rock</a></li>
+          <li><a href="index.html?type=bug" id="color-bug">Bug</a></li>
+          <li><a href="index.html?type=ghost" id="color-ghost">Ghost</a></li>
+          <li><a href="index.html?type=steel" id="color-steel">Steel</a></li>
+          <li>
+            <a href="index.html?type=stellar" id="color-stellar">Stellar</a>
+          </li>
+          <li><a href="index.html?type=fire" id="color-fire">Fire</a></li>
+          <li><a href="index.html?type=water" id="color-water">Water</a></li>
+          <li><a href="index.html?type=grass" id="color-grass">Grass</a></li>
+          <li>
+            <a href="index.html?type=electric" id="color-electric">Electric</a>
+          </li>
+          <li>
+            <a href="index.html?type=psychic" id="color-psychic">Psychic</a>
+          </li>
+          <li><a href="index.html?type=ice" id="color-ice">Ice</a></li>
+          <li><a href="index.html?type=dragon" id="color-dragon">Dragon</a></li>
+          <li><a href="index.html?type=dark" id="color-dark">Dark</a></li>
+          <li><a href="index.html?type=fairy" id="color-fairy">Fairy</a></li>
+          <li><a href="index.html?type=???" id="color-unknown">???</a></li>
+        </div>
+      </ul>
+      <ul class="pokemon-list"></ul>
+    </main>
+
+    <footer>
+      <a href="edit.html" class="button-retour button-index">Edit</a>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
