@@ -162,7 +162,7 @@ filteredListOfPokemons.forEach((pokemon) => {
 
 function addPokemon(pokemon) {
   const newnum = document.createElement("a");
-  newnum.href = "pokemon.html?no=" + pokemon.num;
+  newnum.href = "pokemon.php?no=" + pokemon.num;  
 
   const newCard = document.createElement("li");
 

@@ -74,7 +74,8 @@ a {
         font-family: 'Poppins', sans-serif;
         padding-right: 5%;
         padding-left: 5%;
-        padding-top: 2%;
+        padding-top: 1%;
+        padding-bottom: 1%    ;
         border-radius: 10px;
         justify-content: center;
         align-items: center;
@@ -276,6 +277,7 @@ p {
     width: 6rem;
     border-color: rgba(0, 0, 0, 0);
     border-radius: 1.5rem;
+    
 }
 
 .button-retour {
@@ -284,7 +286,7 @@ p {
     color: white;
     background-color: black;
     border-radius: 2.5rem;
-    padding: 1rem 3rem;
+    padding: 1rem 3rem ;
     position: fixed;
     /*Voir pour ajouter une position fixed pour quand on bouge dans la page*/
 }

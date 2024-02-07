@@ -9,7 +9,7 @@
 
   <body>
     <header>
-      <a href="index.html" class="button-retour button-pokemon">Retour</a>
+      <a href="index.php" class="button-retour button-pokemon">Retour</a>
     </header>
 
     <main id="pokemon-main">

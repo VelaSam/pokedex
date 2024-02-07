@@ -112,7 +112,7 @@
             />
           </div>
           <div class="ligne-formulaire">
-            <a href="index.html" id="lien-index">Retour</a>
+            <a href="index.php" id="lien-index">Retour</a>
             <div class="submit-reset">
               <input type="submit" value="Soumettre" class="boite-bouttons" />
               <input
