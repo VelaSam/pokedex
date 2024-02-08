@@ -15,6 +15,21 @@
   </head>
 
   <body id="index">
+
+  <?php
+  $DBuser = 'root';
+  $DBpass = $_ENV['MYSQL_ROOT_PASSWORD'];
+  $pdo = null;
+
+  try {
+    $database = 'mysql:host=database:3306;dbname=pokedex';
+    $pdo = new PDO($database, $DBuser, $DBpass);
+  } catch (PDOException $e) {
+    echo "Error: Unable to connect to MySQL. Error:\n $e";
+  }
+  ?>
+
+
     <header>
       <img src="images/Poke_Ball.png" alt="logo_pokeball" id="logo_pokeball" />
       <h1>Index</h1>
@@ -55,6 +70,38 @@
       </ul>
       <ul class="pokemon-list">
 
+      <?php
+
+      $type = $_GET['type'] ?? null;
+
+      if ($type != '') {
+        $filtrer = "select * from pokemon where pokedex_number and (type2= :type or type1= :type)";
+        $results = $pdo->prepare($filtrer);
+        $results->execute([':type' => $type]);
+      } else {
+        $results = $pdo->query('select * from pokemon');
+      }
+
+      foreach ($results as $row): ?>
+                                                                                        <?php echo '<li> <a href="pokemon.php?no=' . $row['pokedex_number'] . '">
+            
+                <img src="' . $row['url_image'] . '" alt="' . $row['name'] . '">
+                <div class="infos-list-pokemon">
+                    <a>' . $row['name'] . '</a>
+                    <p class="liste-types">' . ucfirst($row['type1']) . ' ' . ucfirst($row['type2']) . '</p>
+                    <p class="liste-generation"> Generation#' . $row['generation'] . '</p>
+                </div>
+                </a>
+            </li>'
+                                                                                        ;
+                                                                                        ?>
+    <?php endforeach; ?>
+    
+    
+
+
+
+
       </ul>
     </main>
 
@@ -67,20 +114,3 @@
 </html>
 
 
-<?php
-
-echo "<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>";
-
-$DBuser = 'root';
-$DBpass = $_ENV['MYSQL_ROOT_PASSWORD'];
-$pdo = null;
-try {
-  $database = 'mysql:host=database:3306;dbname=pokemon';
-  $pdo = new PDO($database, $DBuser, $DBpass);
-} catch (PDOException $e) {
-  echo "Error: Unable to connect to MySQL. Error:\n $e";
-}
-
-
-
-?>
