@@ -15,7 +15,7 @@
 
     <main id="main-edit">
       <div id="formulaire-pokemon">
-        <form action="formulaire">
+        <form action="formulaire" method="post">
           <div class="ligne-formulaire">
             <label for="nom">Nom</label>
             <input type="text" name="nom" class="question" id="input-nom" />

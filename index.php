@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -75,7 +78,7 @@
       $type = $_GET['type'] ?? null;
 
       if ($type != '') {
-        $filtrer = "select * from pokemon where pokedex_number and (type2= :type or type1= :type)";
+        $filtrer = "select * from pokemon where (type2= :type or type1= :type)";
         $results = $pdo->prepare($filtrer);
         $results->execute([':type' => $type]);
       } else {
@@ -83,18 +86,81 @@
       }
 
       foreach ($results as $row): ?>
-                                                                                        <?php echo '<li> <a href="pokemon.php?no=' . $row['pokedex_number'] . '">
-            
-                <img src="' . $row['url_image'] . '" alt="' . $row['name'] . '">
+                <?php
+                $good = $row['type1'] == 'normal' ? $row['type2'] : $row['type1'];
+                switch ($good) {
+                  case 'normal':
+                    $background = "./images/background_normal.png";
+                    break;
+                  case 'fire':
+                    $background = "./images/background_fire.jpg";
+                    break;
+                  case 'water':
+                    $background = "./images/background_water.jpg";
+                    break;
+                  case 'electric':
+                    $background = "./images/background_electric.jpg";
+                    break;
+                  case 'grass':
+                    $background = "./images/background_grass.jpg";
+                    break;
+                  case 'ice':
+                    $background = "./images/background_ice.jpg";
+                    break;
+                  case 'fighting':
+                    $background = "./images/background_fighting.jpg";
+                    break;
+                  case 'poison':
+                    $background = "./images/background_poison.jpg";
+                    break;
+                  case 'ground':
+                    $background = "./images/background_ground.jpg";
+                    break;
+                  case 'flying':
+                    $background = "./images/background_flying.jpg";
+                    break;
+                  case 'psychic':
+                    $background = "./images/background_psychic.jpg";
+                    break;
+                  case 'bug':
+                    $background = "./images/background_bug.jpg";
+                    break;
+                  case 'rock':
+                    $background = "./images/background_rock.png";
+                    break;
+                  case 'ghost':
+                    $background = "./images/background_ghost.jpg";
+                    break;
+                  case 'dragon':
+                    $background = "./images/background_dragon.jpg";
+                    break;
+                  case 'dark':
+                    $background = "./images/background_dark.jpg";
+                    break;
+                  case 'steel':
+                    $background = "./images/background_steel.jpg";
+                    break;
+                  case 'fairy':
+                    $background = "./images/background_fairy.jpg";
+                    break;
+                  default:
+                    // default code block if the type doesn't match any case
+                    $background = "./images/background_normal.png";
+                }
+
+                echo '
+            <li> 
+              <a class="pokemon-link" href="pokemon.php?no=' . $row['pokedex_number'] . '" >
+                <img src="' . $row['url_image'] . '" alt="' . $row['name'] . '" " style="background: url(' . $background . '); background-size: cover;">
                 <div class="infos-list-pokemon">
-                    <a>' . $row['name'] . '</a>
+                    <section>' . $row['name'] . '</section>
                     <p class="liste-types">' . ucfirst($row['type1']) . ' ' . ucfirst($row['type2']) . '</p>
                     <p class="liste-generation"> Generation#' . $row['generation'] . '</p>
                 </div>
-                </a>
+              </a>  
             </li>'
-                                                                                        ;
-                                                                                        ?>
+                ;
+                ?>
     <?php endforeach; ?>
     
     
